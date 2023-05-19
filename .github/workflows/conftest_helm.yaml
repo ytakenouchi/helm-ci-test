@@ -1,4 +1,4 @@
-name: conftest_helm
+name: helm_ci_test
 
 on:
 
@@ -18,16 +18,16 @@ jobs:
     name: conftest_helm01
     runs-on: ubuntu-latest
     steps:
-      - name: checkout conftest helm
+      - name: checkout helm_ci_test
         uses: actions/checkout@v3
       - name: "ls ci-test after checkout"
         run: ls -la  #./policy エラーになる
-#      - name: rego repository
-#        uses: actions/checkout@v3
-#        with:
-#          repository: ${{ inputs.repository }}
-#          path: ${{ inputs.path }}
-#          token: ${{ secrets.pat}} 
+      - name: checkout helm_test
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ inputs.repository }}
+          path: ${{ inputs.path }}
+          token: ${{ secrets.pat}} 
 
       - name: conf install at conftest_helm
         run: |
@@ -39,6 +39,9 @@ jobs:
           ls -la
       - name: pwd
         run: pwd
+      - name: helm template
+        run : helm template . > test.yaml
+
 #      - name: find yaml-file
 #        run: |
 #          yaml_files=`find . -type f | egrep -v 'yobidashi\.yaml$' | egrep '\.(yml|yaml)$'`
