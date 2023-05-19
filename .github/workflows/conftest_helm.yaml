@@ -41,7 +41,8 @@ jobs:
         run: pwd
       - name: helm template
         run : helm template . > test.yaml
-
+      - name: ls -la 
+        run: ls -la
 #      - name: find yaml-file
 #        run: |
 #          yaml_files=`find . -type f | egrep -v 'yobidashi\.yaml$' | egrep '\.(yml|yaml)$'`
