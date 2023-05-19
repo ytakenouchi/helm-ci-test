@@ -3,9 +3,9 @@ name: conftest_helm
 on:
 
   workflow_call:
-    inputs:
-      repository: 
-        type: string
+#    inputs:
+#      repository: 
+#        type: string
 #      path:
 #        type: string
 #    secrets:
