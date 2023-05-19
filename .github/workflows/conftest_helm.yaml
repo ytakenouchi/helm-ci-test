@@ -24,10 +24,10 @@ jobs:
         run: ls -la  #./policy エラーになる
       - name: checkout helm_test
         uses: actions/checkout@v3
-        with:
-          repository: ${{ inputs.repository }}
-          path: ${{ inputs.path }}
-          token: ${{ secrets.pat}} 
+#        with:
+#          repository: ${{ inputs.repository }}
+#          path: ${{ inputs.path }}
+#          token: ${{ secrets.pat}} 
 
       - name: conf install at conftest_helm
         run: |
