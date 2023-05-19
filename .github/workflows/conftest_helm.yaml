@@ -14,11 +14,11 @@ on:
 
 #条件  
 jobs:
-  import_policy:
-    name: conftest_helm
+  conftest_helm:
+    name: conftest_helm01
     runs-on: ubuntu-latest
     steps:
-      - name: This repository form ci-test
+      - name: checkout conftest helm
         uses: actions/checkout@v3
       - name: "ls ci-test after checkout"
         run: ls -la  #./policy エラーになる
@@ -29,7 +29,7 @@ jobs:
 #          path: ${{ inputs.path }}
 #          token: ${{ secrets.pat}} 
 
-      - name: conf install at ci-test
+      - name: conf install at conftest_helm
         run: |
           LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
           wget "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_Linux_x86_64.tar.gz"
