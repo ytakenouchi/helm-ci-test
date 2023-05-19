@@ -1,0 +1,26 @@
+name: pluto helm-ci-test
+
+on:
+  push:
+    branches:
+      - develop/pluto
+  workflow_call:
+
+jobs:
+  pluto:
+    name: pluto test01
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Pluto ci-test
+        uses: FairwindsOps/pluto/github-action@master
+      - name: pwd
+        run: pwd
+      - name: ls -la ./pluto_folder
+        run: ls -la ./pluto_folder
+      - name: Run test-yaml-file
+        run: pluto detect-files -d ./pluto_folder -o wide
+      - name: Pluto version
+        run: pluto version
+      - name: Python3 version
+        run: python3 -V
