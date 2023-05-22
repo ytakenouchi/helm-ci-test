@@ -3,14 +3,14 @@ name: helm_ci_conftest
 on:
 
   workflow_call:
-#    inputs:
-#      repository: 
-#        type: string
-#      path:
-#        type: string
-#    secrets:
-#      pat:
-#        required: true
+    inputs:
+      repository: 
+        type: string
+      path:
+        type: string
+    secrets:
+      pat:
+        required: true
 
 #条件  
 jobs:
@@ -21,13 +21,13 @@ jobs:
       - name: checkout helm_ci_test
         uses: actions/checkout@v3
 
-#      - name: rego repository
-#        uses: actions/checkout@v3
-#        with:
-#          repository: ${{ inputs.repository }}
-#          path: ${{ inputs.path }}
-#          token: ${{ secrets.pat}} 
-#
+      - name: rego repository
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ inputs.repository }}
+          path: ${{ inputs.path }}
+          token: ${{ secrets.pat}} 
+
       - name: "ls ci-test after checkout"
         run: ls -la
       - name: conf install at conftest_helm
