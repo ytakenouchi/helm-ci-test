@@ -30,8 +30,8 @@ jobs:
           sudo mv conftest /usr/local/bin/
           conftest --version
           ls -la
-      - name: pwd
-        run: pwd
+      - name: pwd;ls
+        run: pwd;ls -la
       - name: find yaml-file
         run: |
           yaml_files=`find . -type f | egrep -v 'test-ok\.yaml$' | egrep '\.(yml|yaml)$'`
