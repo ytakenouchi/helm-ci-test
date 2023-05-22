@@ -16,8 +16,8 @@ jobs:
         uses: FairwindsOps/pluto/github-action@master
       - name: pwd
         run: pwd
-      - name: ls -la ./pluto_folder
-        run: ls -la ./pluto_folder
+      - name: ls -la
+        run: ls -la 
       - name: Run test-yaml-file
         run: pluto detect-files -d ./pluto_folder -o wide
       - name: Pluto version
