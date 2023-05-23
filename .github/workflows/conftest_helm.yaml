@@ -49,4 +49,6 @@ jobs:
       - name: ls manifests_folder
         run: ls -la ./manifests/
       - name: conftest 
-        run:  conftest test --policy ./policy ./manifests/test01.yaml
+        run:  |
+                conftest test --policy ./policy ./manifests/test01.yaml
+                cat ./manifests/test01.yaml
