@@ -18,8 +18,8 @@ jobs:
         run: pluto version
       - name: helm template
         run:  |
-              helm template . > ./pluto_folder/test02.yaml
-              ls -l
+              helm template . > ./test02.yaml
+              ls -la
               cat test02.yaml
       - name: pluto test
         run: pluto detect-files -d ./pluto_folder -o wide
