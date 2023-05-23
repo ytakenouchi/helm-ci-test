@@ -20,4 +20,7 @@ jobs:
         run: pluto version
       - name: Python3 version
         run: python3 -V
-
+      - name: helm test
+        run:  |
+              helm template . > test01.yaml
+              cat test01.yaml
