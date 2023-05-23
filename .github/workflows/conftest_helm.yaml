@@ -54,4 +54,5 @@ jobs:
       - name: helm test
         run:  |
               helm template . > test01.yaml
+              ls -l
               cat test01.yaml
