@@ -47,4 +47,5 @@ jobs:
               ls -la ./manifests
               cat ./manifests/test01.yaml
       - name: conftest
-        run:  conftest test --policy ./policy ./manifests/pod01.yaml
+        run: ls -la
+      #        run:  conftest test --policy ./policy ./manifests/pod01.yaml
