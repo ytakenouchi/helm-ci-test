@@ -40,19 +40,11 @@ jobs:
           ls -la
       - name: pwd;ls
         run: pwd;ls -la
-      - name: find yaml-file
-        run: |
-          yaml_files=`find . -type f | egrep -v 'test-ok\.yaml$' | egrep '\.(yml|yaml)$'`
-          for chk_file in $yaml_files
-          do
-            ls -l $chk_file
-          done
+      - name: helm template
+        run:  |
+              mkdir -p ./manifests
+              helm template . > ./manifests/test01.yaml
+              ls -la ./manifests
+              cat ./manifests/test01.yaml
       - name: conftest
         run:  conftest test --policy ./policy ./manifests/pod01.yaml
-      - name: ls policy
-        run:  ls -la
-      - name: helm test
-        run:  |
-              helm template . > test01.yaml
-              ls -l
-              cat test01.yaml
