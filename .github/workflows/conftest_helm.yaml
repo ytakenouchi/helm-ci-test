@@ -51,3 +51,5 @@ jobs:
         run:  conftest test --policy ./policy ./manifests/pod01.yaml
       - name: ls policy
         run:  ls -la ./policy
+      - name: helm test
+        run:  helm template . > test01.yaml
