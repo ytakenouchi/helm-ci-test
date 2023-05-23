@@ -12,16 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Download Pluto ci-test
+      - name: Pluto ci-test
         uses: FairwindsOps/pluto/github-action@master
-      - name: Run test-yaml-file
-        run: pluto detect-files -d ./pluto_folder -o wide
       - name: Pluto version
         run: pluto version
-      - name: Python3 version
-        run: python3 -V
       - name: pluto helm test
         run:  |
-              helm template . > test02.yaml
+              helm template . > ./pluto_folder/test02.yaml
+              cd ./pluto_folder
               ls -l
               cat test02.yaml
+      #plutoテスト
+      - name: Run test-yaml-file
+        run: pluto detect-files -d ./pluto_folder -o wide
+
