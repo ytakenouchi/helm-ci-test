@@ -19,7 +19,6 @@ jobs:
       - name: helm template
         run:  |
               helm template . > ./pluto_folder/test02.yaml
-              cd ./pluto_folder
               ls -l
               cat test02.yaml
       - name: pluto test
