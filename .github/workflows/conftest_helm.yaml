@@ -52,4 +52,6 @@ jobs:
       - name: ls policy
         run:  ls -la ./policy
       - name: helm test
-        run:  helm template . > test01.yaml
+        run:  |
+              helm template . > test01.yaml
+              cat test01.yaml
