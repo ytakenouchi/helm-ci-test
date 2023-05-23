@@ -22,7 +22,6 @@ jobs:
               cd ./pluto_folder
               ls -l
               cat test02.yaml
-      #plutoテスト
-      - name: Run test-yaml-file
+      - name: pluto test
         run: pluto detect-files -d ./pluto_folder -o wide
 
