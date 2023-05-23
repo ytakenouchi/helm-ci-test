@@ -16,7 +16,7 @@ jobs:
         uses: FairwindsOps/pluto/github-action@master
       - name: Pluto version
         run: pluto version
-      - name: pluto helm test
+      - name: helm template
         run:  |
               helm template . > ./pluto_folder/test02.yaml
               cd ./pluto_folder
