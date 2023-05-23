@@ -46,6 +46,7 @@ jobs:
               helm template . > ./manifests/test01.yaml
               ls -la ./manifests
               cat ./manifests/test01.yaml
-      - name: conftest
+      - name: ls manifests_folder
         run: ls -la ./manifests/
-      #        run:  conftest test --policy ./policy ./manifests/pod01.yaml
+      - name: conftest 
+        run:  conftest test --policy ./policy ./manifests/pod01.yaml
