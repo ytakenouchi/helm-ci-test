@@ -20,8 +20,8 @@ jobs:
         run:  |
               mkdir -p ./pluto_folder
               helm template . > ./pluto_folder/test02.yaml
-              ls -la
-              cat test02.yaml
+              ls -la ./pluto_folder
+              cat ./pluto_folder/test02.yaml
       - name: pluto test
         run: pluto detect-files -d ./pluto_folder -o wide
 
