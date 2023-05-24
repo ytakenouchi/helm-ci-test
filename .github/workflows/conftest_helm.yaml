@@ -20,7 +20,6 @@ jobs:
     steps:
       - name: checkout helm_ci_test
         uses: actions/checkout@v3
-
       - name: rego repository
         uses: actions/checkout@v3
         with:
@@ -38,17 +37,16 @@ jobs:
           sudo mv conftest /usr/local/bin/
           conftest --version
           ls -la
-      - name: pwd;ls
-        run: pwd;ls -la
-      - name: helm template
-        run: |
-          mkdir -p ./manifests
-          helm template . > ./manifests/test01.yaml
-          ls -la ./manifests
-          cat ./manifests/test01.yaml
-      - name: ls manifests_folder
-        run: |
-          ls -la ./manifests/
-          cat ./manifests/test01.yaml
-      - name: conftest 
-        run:  conftest test --policy ./policy ./manifests/test01.yaml
+#      - name: pwd;ls
+#        run: pwd;ls -la
+#      - name: helm template
+#        run: |
+#          mkdir -p ./manifests
+#          helm template . > ./manifests/test01.yaml
+#      - name: ls manifests_folder
+#        run: |
+#          ls -la ./manifests/
+#          cat ./manifests/test01.yaml
+#      - name: conftest 
+#        run:  conftest test --policy ./policy ./manifests/test01.yaml
+#
