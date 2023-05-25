@@ -20,14 +20,12 @@ jobs:
     steps:
       - name: checkout helm_ci_test
         uses: actions/checkout@v3
-
       - name: rego repository
         uses: actions/checkout@v3
         with:
           repository: ${{ inputs.repository }}
           path: ${{ inputs.path }}
           token: ${{ secrets.pat}} 
-
       - name: "ls ci-test after checkout"
         run: pwd;ls -la
       - name: conf install at conftest_helm
