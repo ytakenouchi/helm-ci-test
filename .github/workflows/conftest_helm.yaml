@@ -1,4 +1,4 @@
-name: helm_ci_conftest
+name: helm_ci_test
 
 on:
 
